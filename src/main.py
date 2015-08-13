@@ -6,15 +6,17 @@ Created on Aug 12, 2015
 import sip
 sip.setapi('QString', 2)
 from site import addsitedir as asd
-from PyQt4.QtGui import QApplication
+from PyQt4.QtGui import QApplication, QStyleFactory
 import sys
 import _creator as creator
 
 asd('R:/Python_Scripts/plugins')
 
 
-
-app = QApplication(sys.argv)
-win = creator.Compositor()
-win.show()
-sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    app.setStyle(QStyleFactory.create('plastique'))
+    global win
+    win = creator.Compositor()
+    win.show()
+    sys.exit(app.exec_())

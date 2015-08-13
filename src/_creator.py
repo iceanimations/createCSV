@@ -39,7 +39,7 @@ class Compositor(Form, Base):
         self.setupUi(self)
         
         self.setWindowTitle(title)
-        self.seqBox = cui.MultiSelectComboBox(self, '--Select Shots--')
+        self.seqBox = cui.MultiSelectComboBox(self, '--Select Sequences--')
         self.pathLayout.addWidget(self.seqBox)
         
         self.lastPath = ''

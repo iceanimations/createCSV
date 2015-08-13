@@ -17,6 +17,7 @@ import cui
 reload(cui)
 import shutil
 import csv
+import appUsageApp
 
 title = 'Create CSV'
 
@@ -49,6 +50,8 @@ class Compositor(Form, Base):
         self.browseButton2.clicked.connect(self.setCSVPath)
         
         self.progressBar.hide()
+        
+        appUsageApp.updateDatabase('createCSV')
         
     def setCSVPath(self):
         filename = QFileDialog.getSaveFileName(self, title, self.lastPath, '*.csv')

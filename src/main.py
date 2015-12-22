@@ -6,11 +6,13 @@ Created on Aug 12, 2015
 import sip
 sip.setapi('QString', 2)
 from site import addsitedir as asd
+asd('R:/Python_Scripts/plugins')
+asd('R:/Python_Scripts/plugins/utilities')
+asd('R:/Pipe_Repo/Projects/TACTIC')
+
 from PyQt4.QtGui import QApplication, QStyleFactory
 import sys
 import _creator as creator
-
-asd('R:/Python_Scripts/plugins')
 
 
 if __name__ == '__main__':

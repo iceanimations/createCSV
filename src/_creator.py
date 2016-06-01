@@ -103,7 +103,7 @@ class Compositor(Form, Base):
                         for i, seq in enumerate(sequences):
                             self.setStatus('Creating %s (%s of %s)'%(seq, i+1, length))
                             shotsPath = osp.join(seqPath, seq, 'SHOTS')
-                            writer.writerow([seq] + [''] * 6)
+                            #writer.writerow([seq] + [''] * 6)
                             shots = os.listdir(shotsPath)
                             self.progressBar.setMaximum(len(shots))
                             for j, shot in enumerate(shots):
@@ -111,10 +111,8 @@ class Compositor(Form, Base):
                                     rng = self.getStartEnd(shotsPath, shot)
                                     frames = rng[1] - rng[0]
                                     seconds = frames/25.0
-                                    writer.writerow(['', shot, rng[0], rng[1], frames, seconds, ''])
+                                    writer.writerow([seq, shot, rng[0], rng[1], frames, seconds, ''])
                                     self.progressBar.setValue(j+1)
-                            writer.writerow([''] * 5)
-                            writer.writerow([''] * 5)
         except Exception as ex:
             self.showMessage(msg=str(ex), icon=QMessageBox.Critical)
         finally:

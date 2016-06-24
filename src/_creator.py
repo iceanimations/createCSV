@@ -9,8 +9,8 @@ from PyQt4 import uic
 from PyQt4.QtGui import QMessageBox, QFileDialog, qApp
 import os.path as osp
 import msgBox
-import qutil
-reload(qutil)
+import iutil
+reload(iutil)
 import os
 import re
 import cui
@@ -25,7 +25,7 @@ homeDir = osp.join(osp.expanduser('~'), 'create_csv')
 if not osp.exists(homeDir):
     os.mkdir(homeDir)
 
-rootPath = qutil.dirname(__file__, depth=2)
+rootPath = iutil.dirname(__file__, depth=2)
 uiPath = osp.join(rootPath, 'ui')
 iconPath = osp.join(rootPath, 'icons')
 

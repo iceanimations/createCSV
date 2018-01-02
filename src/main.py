@@ -14,7 +14,6 @@ from PyQt4.QtGui import QApplication, QStyleFactory
 import sys
 import _creator as creator
 
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setStyle(QStyleFactory.create('plastique'))
